@@ -35,8 +35,17 @@ class EvoExampleClient {
         return json_decode($result, true);
     }
 
-    function get_order_list() {
+    /**
+     * Получить список заказов
+     * @param string $status Возможные статусы заказов: pending - вновь созданный; received - принят в обработку; canceled - отменен
+     * @return array
+     */
+    function get_order_list($status) {
         $url = '/api/v1/orders/list';
+		if ( !is_null($status) )
+		{
+			$url .= '?'.http_build_query(array('status'=>$status));
+		}        
         $method = 'GET';
 
         $response = $this->make_request($method, $url, NULL);
