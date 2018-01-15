@@ -40,7 +40,7 @@ class EvoExampleClient {
      * @param string $status Возможные статусы заказов: pending - вновь созданный; received - принят в обработку; canceled - отменен
      * @return array
      */
-    function get_order_list($status) {
+    function get_order_list($status = NULL) {
         $url = '/api/v1/orders/list';
 		if ( !is_null($status) )
 		{
