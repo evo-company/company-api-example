@@ -61,8 +61,16 @@ class EvoExampleClient {
 
         return $response;
     }
-
-    function set_order_status($ids, $status, $cancellation_reason, $cancellation_text) {
+	
+    /**
+     * Изменять статус заказа.
+     * @param array $ids Массив номеров заказов
+     * @param string $status Статус [ pending, received, delivered, canceled, draft, paid ]
+     * @param string $cancellation_reason Только для статуса canceled [ not_available, price_changed, buyers_request, not_enough_fields, duplicate, invalid_phone_number, less_than_minimal_price, another ]
+     * @param string $cancellation_text Толкьо для причины отмены "price_changed", "not_enough_fields" или "another"
+     * @return array
+     */
+    function set_order_status($ids, $status, $cancellation_reason = NULL, $cancellation_text = NULL) {
         $url = '/api/v1/orders/set_status';
         $method = 'POST';
 
@@ -70,6 +78,14 @@ class EvoExampleClient {
              'status'=> $status,
              'ids'=> $ids
         );
+	if ( $status === 'canceled' )
+	{
+		$body['cancellation_reason'] = $cancellation_reason;
+
+		if ( in_array($cancellation_reason,array('price_changed', 'not_enough_fields', 'another')) )
+			$body['cancellation_text'] = $cancellation_text;
+	}
+	    
 
         $response = $this->make_request($method, $url, $body);
 
