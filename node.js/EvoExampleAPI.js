@@ -4,7 +4,7 @@ const https = require('https');
 
 const AUTH_TOKEN = ''  // Your authorization token
 const HOST = 'my.prom.ua' // e.g.: my.prom.ua, my.tiu.ru, my.satu.kz, my.deal.by, my.prom.md
-const PORT = 80;
+const PORT = 443;
 
 
 class EvoExampleAPI {
