@@ -18,7 +18,7 @@ class EvoClientExample(object):
         self.token = token
 
     def make_request(self, method, url, body=None):
-        connection = http.client.HTTPConnection(HOST)
+        connection = http.client.HTTPSConnection(HOST)
 
         headers = {'Authorization': 'Bearer {}'.format(self.token),
                    'Content-type': 'application/json'}
