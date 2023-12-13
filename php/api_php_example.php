@@ -1,6 +1,6 @@
 <?php
 define('AUTH_TOKEN', '');  // Your authorization token
-define('HOST', 'my.prom.ua');  // e.g.: my.prom.ua, my.tiu.ru, my.satu.kz, my.deal.by, my.prom.md
+define('HOST', 'my.prom.ua');  // e.g.: my.prom.ua, my.satu.kz, my.prom.md
 
 
 class EvoExampleClient {

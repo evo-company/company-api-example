@@ -3,7 +3,7 @@
 const https = require('https');
 
 const AUTH_TOKEN = ''  // Your authorization token
-const HOST = 'my.prom.ua' // e.g.: my.prom.ua, my.tiu.ru, my.satu.kz, my.deal.by, my.prom.md
+const HOST = 'my.prom.ua' // e.g.: my.prom.ua, my.satu.kz, my.prom.md
 const PORT = 443;
 
 

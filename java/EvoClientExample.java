@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class EvoClientExample {
 
     final private String token = "";  // Your authorization token
-    final private String host = "my.prom.ua";  // e.g.: my.prom.ua, my.tiu.ru, my.satu.kz, my.deal.by, my.prom.md
+    final private String host = "my.prom.ua";  // e.g.: my.prom.ua, my.satu.kz, my.prom.md
 
     public static void main(String[] args) throws Exception {
         EvoClientExample client = new EvoClientExample();
